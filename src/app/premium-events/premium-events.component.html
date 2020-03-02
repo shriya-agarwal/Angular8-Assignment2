@@ -1,0 +1,16 @@
+<ng-container *ngFor="let event of eventList">
+    <h2>{{ event.name }}</h2>
+        <p *ngIf="event.location == null && event.onlineUrl != null">Online Only</p>
+        <p>Date: {{ event.date }}</p>
+        <p>Time: {{ event.time }}</p>
+        <p *ngIf="event.location != null">
+            Location: 
+            {{ event.location.address }}, 
+            {{ event.location.city }}, 
+            {{ event.location.state }}, 
+            {{ event.location.pin }}, 
+            {{ event.location.country }}
+        </p>
+        <p *ngIf="event.onlineUrl != null">Online URL: {{ event.onlineUrl }}</p>
+        <br/>
+</ng-container>
